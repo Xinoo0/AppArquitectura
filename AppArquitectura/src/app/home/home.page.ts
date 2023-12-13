@@ -143,4 +143,8 @@ export class HomePage implements OnInit{
     volverInicio(){
       this.router.navigate(['/inicio']);
     }
+
+    IrCodigoqr(){
+      this.router.navigate(['/codigoqr']);
+    }
 }

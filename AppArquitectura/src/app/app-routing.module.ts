@@ -18,7 +18,11 @@ const routes: Routes = [
   {
     path: 'inicio-sesion',
     loadChildren: () => import('./inicio-sesion/inicio-sesion.module').then( m => m.InicioSesionPageModule)
+  },  {
+    path: 'codigoqr',
+    loadChildren: () => import('./codigoqr/codigoqr.module').then( m => m.CodigoqrPageModule)
   },
+
 ];
 
 @NgModule({
