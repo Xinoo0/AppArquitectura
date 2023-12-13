@@ -22,7 +22,10 @@ export class InicioSesionPage implements OnInit {
   constructor(private fb: FormBuilder, private router: Router, private loginService: LoginService, private registro: RegistroService, private alertController: AlertController) { 
 
     this.loginForm = this.fb.group({
-      nombre: ['', Validators.required],
+      nombre: ['', Validators.required ],
+      apellido: ['', Validators.required ],
+      telefono: ['', Validators.required ],
+      email: ['', Validators.required ],
       password: ['', Validators.required],
     });
 
@@ -34,6 +37,10 @@ export class InicioSesionPage implements OnInit {
 
   async login() {
     const nombre = this.loginForm.get('nombre')?.value;
+    const apellido = this.loginForm.get('apellido')?.value;
+    const telefono = this.loginForm.get('telefono')?.value;
+    const email = this.loginForm.get('email')?.value;
+
     const password = this.loginForm.get('password')?.value;
   
     if (this.registro.login(nombre, password)) {
@@ -41,8 +48,12 @@ export class InicioSesionPage implements OnInit {
       const usuario= {
         
         nombre: this.loginForm.get('nombre')?.value,
+        apellido : this.loginForm.get('apellido')?.value,
+
+        telefono : this.loginForm.get('telefono')?.value,
+        email : this.loginForm.get('email')?.value,
+
         password: this.loginForm.get('password')?.value,
-  
         
   
       }
@@ -51,7 +62,7 @@ export class InicioSesionPage implements OnInit {
       console.log(usuario)
       this.loginService.setNombre = usuario.nombre
       this.loginService.setUserIsLogged(true);
-      this.router.navigate(['/inicio'])
+      this.router.navigate(['/home'])
   
       console.log('Inicio de sesión exitoso');
       await this.presentAlert('Inicio de sesión exitoso');

@@ -11,7 +11,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <h1 class="page-title">TeLlevoApp</h1>
+  <h1 class="page-title">ArriendoMiestacionamiento</h1>
 
   
   <ion-card class="login-card">
@@ -23,15 +23,24 @@
         <form [formGroup]="loginForm" (ngSubmit)="login()" class = "login-form ">
 
           <ion-item style="background-color: black;">
-            <ion-input formControlName="nombre" label="Nombre de usuario" labelPlacement="floating" placeholder="Ej. Fernado123"></ion-input>
+            <ion-input formControlName="nombre" label="Nombre de usuario" labelPlacement="floating" placeholder="Ej. usuario123"></ion-input>
           </ion-item>
 
+          <ion-item style="background-color: black;">
+            <ion-input formControlName="apellido" label="Apellido" labelPlacement="floating" placeholder="Ej. Gonzalez"></ion-input>
+          </ion-item>
+
+          <ion-item style="background-color: black;">
+            <ion-input formControlName="telefono" label="Telefono" labelPlacement="floating" placeholder="Ej. + 56 9 ******"></ion-input>
+          </ion-item>
+          <ion-item style="background-color: black;">
+            <ion-input formControlName="email" label="Email" labelPlacement="floating" placeholder="Ej. usuario1@gmail.com"></ion-input>
+          </ion-item>
           <ion-item>
             <ion-input formControlName="password" type="password" required=true label="Contraseña" labelPlacement="floating" placeholder="···"></ion-input>
           </ion-item>
 
           <ion-button type="submit" [disabled]="!loginForm.valid" expand="block" id="present-alert">Iniciar Sesion</ion-button>
-          <ion-button expand="block" routerLink="/rest">Restablecer Contraseña</ion-button>
 
           <ion-item>
             <p>No tiene cuenta?</p>

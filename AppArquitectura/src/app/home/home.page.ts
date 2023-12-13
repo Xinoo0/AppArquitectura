@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 
 declare var google : any;
 
@@ -18,7 +18,7 @@ export class HomePage implements OnInit{
   map = null;
   geocoder = new google.maps.Geocoder();
 
-  constructor(private router: Router, private alertController: AlertController) { }
+  constructor(private router: Router, private alertController: AlertController, public navCtrl: NavController,) { }
   
   marker = null;
   price: number | null = null;
@@ -147,4 +147,25 @@ export class HomePage implements OnInit{
     IrCodigoqr(){
       this.router.navigate(['/codigoqr']);
     }
+
+    async cerrar() {
+      const alert = await this.alertController.create({
+        header: 'Cerrar Sesion?',
+        buttons: [
+          {
+            text:'No',
+            handler:() => {
+            }
+        },{
+          text:'Si',
+            handler:() => {
+              this.navCtrl.navigateRoot('');
+          }
+        }
+      ]
+      });
+  
+      await alert.present();
+    }
+
 }

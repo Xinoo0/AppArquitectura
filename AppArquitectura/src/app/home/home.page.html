@@ -13,7 +13,7 @@
         <ion-button routerLink="/registro">Registrarse</ion-button>
       </ion-item>
       <ion-item>
-        <ion-button>Iniciar Sesión</ion-button>
+        <ion-button routerLink="/inicio-sesion">Iniciar Sesión</ion-button>
       </ion-item>
       <ion-item>
         <h6>Proximamente Imagen del Usuario</h6>
@@ -23,7 +23,7 @@
         <ion-button color="light">Editar mi Perfil > </ion-button>
       </ion-item>
       <ion-item>
-        <ion-button color="danger">Cerrar Sesión</ion-button>
+        <ion-button color="danger" (click)="cerrar()">Cerrar Sesión</ion-button>
       </ion-item>
     </ion-content>
     <ion-content class="ion-padding">
@@ -76,7 +76,7 @@
       <div id="map"></div>
       <div class="Arriendo">
         <ion-card>
-          <h3>¿Donde quires buscar un estacionamiento?</h3>
+          <h3 style=" color: rgb(0, 0, 0);">¿Donde quieres buscar un estacionamiento?</h3>
           <ion-card-content>
             <form (ngSubmit)="saveTrip()" >
               <ion-item >

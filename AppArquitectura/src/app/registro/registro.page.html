@@ -25,23 +25,23 @@
         </ion-item>
         <ion-item>
           <ion-label position="floating" >Apellido</ion-label>
-          <ion-input formControlApellido="apellido" required ></ion-input>
+          <ion-input formControlName="apellido" required ></ion-input>
         </ion-item>
         <ion-item>
 
           <ion-label position="floating" >Telefono</ion-label>
-          <ion-input formControlTelefono="telefono" required ></ion-input>
+          <ion-input formControlName="telefono" required ></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Email</ion-label>
-          <ion-input formControlEmail="email" required></ion-input>
+          <ion-input formControlName="email" required></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Contraseña</ion-label>
           <ion-input formControlName="password" type="password" required></ion-input>
         </ion-item>
     
-        <ion-button fill="clear" type="submit" expand="block" color = "primary" [disabled]="!registroForm.valid">Registrarse</ion-button>
+        <ion-button fill="clear" type="submit" expand="block" color = "primary" [disabled]="!registroForm.valid" routerLink="/inicio">Registrarse</ion-button>
         
         <ion-button fill="clear" type="submit" expand="block" color = "primary" routerLink="/home">Volver</ion-button>
 
