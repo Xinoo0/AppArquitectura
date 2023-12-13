@@ -1,0 +1,7 @@
+{
+  "name": "AppArquitectura",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

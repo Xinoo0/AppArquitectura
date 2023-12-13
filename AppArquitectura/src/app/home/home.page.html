@@ -1,0 +1,103 @@
+<ion-header [translucent]="true">
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title> 
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="user-perfil">
+      <ion-item>
+        <ion-button routerLink="/registro">Registrarse</ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-button>Iniciar Sesión</ion-button>
+      </ion-item>
+      <ion-item>
+        <h6>Proximamente Imagen del Usuario</h6>
+        <img src="" alt="">
+      </ion-item>
+      <ion-item>
+        <ion-button color="light">Editar mi Perfil > </ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-button color="danger">Cerrar Sesión</ion-button>
+      </ion-item>
+    </ion-content>
+    <ion-content class="ion-padding">
+      <ion-list>
+        <ion-item>
+          <ion-button>Mis Arriendos</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-button>Mi Billetera</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-button>Ayuda</ion-button>  
+        </ion-item>
+        <ion-item>
+          <ion-button>Mensajes</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-button>Seguridad</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-button>Configuracion</ion-button>
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-item>
+          <ion-button>Invitar Amigos</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-button>Conéctate con AME</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-button>Códigos Promocionales</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-button>Escanea tu código QR</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>AME APP</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <div id="map"></div>
+      <div class="Arriendo">
+        <ion-card>
+          <h3>¿Donde quires buscar un estacionamiento?</h3>
+          <ion-card-content>
+            <form (ngSubmit)="saveTrip()" >
+              <ion-item >
+                <ion-input id="geolocalizacion" type="text" placeholder="">Ingresar Ubicacion</ion-input>
+              </ion-item>
+              <ion-item>
+                <input id="autocomplete" type="text" placeholder="Ingresa una dirección">
+              </ion-item>
+              <ion-item>
+                <ion-input type="number" [(ngModel)]="trip.price" name="price" placeholder="Ingresa un valor aprox en pago permitido"></ion-input>
+              </ion-item>
+              <ion-button (click)="addMarker()">CALCULAR ARRIENDO</ion-button>
+              <ion-button type="submit">INICIAR ARRIENDO</ion-button>
+            </form>
+          </ion-card-content>
+          <ion-card-content>
+            
+            <ion-button (click)="volverInicio()" >CANCELAR</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-content>
+  </div>
+</ion-content>
